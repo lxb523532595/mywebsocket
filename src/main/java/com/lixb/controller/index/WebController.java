@@ -16,6 +16,10 @@ public class WebController {
     @RequestMapping("test")
     @ResponseBody
     public String test(){
+        boolean b = 3>2;
+        if(b){
+            throw new RuntimeException("出错啦");
+        }
         return "index";
     }
 }
