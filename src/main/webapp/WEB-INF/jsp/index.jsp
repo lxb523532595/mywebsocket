@@ -3,9 +3,10 @@
 <html>
 <head lang="en">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Spring Boot Demo - FreeMarker</title>
+    <title>单页聊天</title>
     <%--<link href="/css/index.css" rel="stylesheet" />--%>
-    <script src="../js/index.js"></script>
+    <%@include file="common/common.jsp"%>
+    <script src="js/index.js"></script>
     <style >
         #message{
             margin-top:40px;

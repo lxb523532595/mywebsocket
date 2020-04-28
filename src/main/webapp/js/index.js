@@ -3,7 +3,10 @@ function connectWebSocket(){
     //判断当前浏览器是否支持WebSocket
     //判断当前浏览器是否支持WebSocket
     if ('WebSocket'in window) {
-        websocket = new WebSocket("ws://localhost:8089//li/ws/websocket");
+        // debugger;
+        if(!websocket||websocket.readyState==2||websocket.readyState==3){
+            websocket = new WebSocket("ws://localhost:8089//li/ws/websocket");
+        }
     } else {
         alert('当前浏览器不支持websocket');
     }
@@ -36,12 +39,23 @@ function setMessageInnerHTML(innerHTML) {
 
 //关闭连接
 function closeWebSocket() {
-    websocket.close();
+    if(websocket){
+        websocket.close();
+    }
 }
 
 //发送消息
 function send() {
     var message = document.getElementById('text').value;
-    websocket.send(message);
+    if(isOpen()){
+        websocket.send(message);
+    }
 }
 
+/**
+ * 是否连接
+ * @returns {boolean}
+ */
+function isOpen(){
+    return websocket&&websocket.readyState==1;
+}
