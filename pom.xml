@@ -58,6 +58,17 @@
             <classifier>jdk15</classifier>
         </dependency>
 
+        <!-- redis的支持 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+        </dependency>
+
         <!-- WebCollector 爬虫框架
         <dependency>
             <groupId>cn.edu.hfut.dmic.webcollector</groupId>

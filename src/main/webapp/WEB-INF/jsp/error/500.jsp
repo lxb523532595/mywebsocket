@@ -4,6 +4,6 @@
     <title>Title</title>
 </head>
 <body>
-custom! This is a 500 page.
+custom! This is a 500 page.jsp
 </body>
 </html>
